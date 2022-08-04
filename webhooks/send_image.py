@@ -1,6 +1,6 @@
 from discord_webhook import DiscordWebhook
 from datetime import datetime
-import links #import your own webhook links like this:  link_to_edited = 'url_of_webhook_here'
+import links
 
 # creating image name from unix timestamp
 image_name = str(int(datetime.timestamp(datetime.now()))) + '-käsitelty-kuva' + '.jpg'
