@@ -1,6 +1,8 @@
 from discord_webhook import DiscordWebhook
 from datetime import datetime
-import links
+from decouple import config
+
+DISCORD_DCKKWEBHOOK  = config('DCKKWEBHOOK')
 
 # creating image name from unix timestamp
 image_name = str(int(datetime.timestamp(datetime.now()))) + '-käsitelty-kuva' + '.jpg'
@@ -9,7 +11,7 @@ image_name = str(int(datetime.timestamp(datetime.now()))) + '-käsitelty-kuva' +
 path_to_image = "/home/b9/portfolio/discord/radio-kuvankasittely/Touchdesigner/kuva1.jpg"
 
 # get the webhook link for webhook
-webhook = DiscordWebhook(url=links.link_to_edited, username="Automaaginen kuvankäsittelijä 1.0")
+webhook = DiscordWebhook(url=DISCORD_DCKKWEBHOOK, username="Automaaginen kuvankäsittelijä 1.0")
 
 # send one image
 with open(path_to_image, "rb") as f:
